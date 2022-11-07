@@ -25,4 +25,7 @@ public class Session {
     public WebDriver getBrowser() {
         return browser;
     }
+    public void acceptAlert() {
+        browser.switchTo().alert().accept();
+    }
 }

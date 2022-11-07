@@ -2,7 +2,11 @@ package control;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import session.Session;
+
+import java.time.Duration;
 
 public class Control {
     protected WebElement control;
@@ -34,4 +38,8 @@ public class Control {
     }
 
 
+    public void waitControlIsNotInThePage() {
+        WebDriverWait explicitWait = new WebDriverWait(Session.getInstance().getBrowser(), Duration.ofSeconds(5));
+        explicitWait.until(ExpectedConditions.not(ExpectedConditions.visibilityOfElementLocated(this.locator)));
+    }
 }
