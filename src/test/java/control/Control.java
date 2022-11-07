@@ -20,8 +20,18 @@ public class Control {
         this.find();
         control.click();
     }
-
-
+    public boolean isControlDisplayed(){
+        try {
+            this.find();
+            return control.isDisplayed();
+        } catch (Exception e) {
+            return false;
+        }
+    }
+    public String getText(){
+        this.find();
+        return this.control.getText();
+    }
 
 
 }
